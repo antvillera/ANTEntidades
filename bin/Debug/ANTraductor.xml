@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ANTraductor</name>
+    </assembly>
+    <members>
+        <member name="M:ANTraductor.BBDDInformix.CreateTableIfNotExists(System.String,System.String,System.String)">
+            <summary>
+            Crear una tabla si no existe (con su primer campo)
+            </summary>
+            <param name="table"></param>
+            <param name="firstColumn"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.BBDDInformix.CreateColumnIfNotExists(System.String,System.String,System.String)">
+            <summary>
+            Crear un campo en una tabla si no existe
+            </summary>
+            <param name="table"></param>
+            <param name="column"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.BBDDInformix.CreateNullToVoidProcedure">
+            <summary>
+            Transforma nulos en cadenas vacias 
+            </summary>
+        </member>
+        <member name="M:ANTraductor.BBDDInformix.CreaTablasYCamposANTVentados">
+            <summary>
+            Comprueba y asegura la existencia de todas las tablas y campos necesarios para ANTVentados
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Cartera.GetDeudasClientePorNIF(System.String,System.String)">
+            <summary>
+            Deudas del NIF de un cliente
+            </summary>
+            <param name="empresa"></param>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Cartera.GetDetalleDeudasCliente(System.String,System.String,System.Int32)">
+            <summary>
+            Lista de facturas sin pagar
+            </summary>
+            <param name="empresa"></param>
+            <param name="cliente"></param>
+            <param name="numDeudas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Cartera.GetCuentaDeudasPorPeriodos(System.String,System.String)">
+            <summary>
+            Cuenta y sumatorio de facturas sin pagar
+            </summary>
+            <param name="empresa"></param>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Mensajes.GetMensajes(System.String)">
+            <summary>
+            Listado de mensajes enviados y recibidos por un usuario
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Mensajes.SetMensaje(System.String,System.String,System.String)">
+            <summary>
+            Envia un mensaje de un usuario a otro 
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Mensajes.SetLimpiarAntiguos">
+            <summary>
+            Elimina mensajes de dias anteriores
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Partidas.GetPartidasDeConfeccion(System.String,System.String,System.String,System.String)">
+            <summary>
+            Lista de partidas abiertas de una confeccion
+            </summary>
+            <param name="empresa"></param>
+            <param name="variedad"></param>
+            <param name="confeccion"></param>
+            <param name="centro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Partidas.GetDetallePartida(System.String,System.String)">
+            <summary>
+            Lineas de venta de una partida
+            </summary>
+            <param name="empresa"></param>
+            <param name="partida"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Previsiones.GetPrevisiones(System.String)">
+            <summary>
+            Lista de previsiones de compra de un producto
+            </summary>
+            <param name="empresa"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Entradas.EliminarEntrada(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Eliminar una entrada de la base de datos a partir de los parametros indicados
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Entradas.GetEntrada(System.String,System.String,System.String)">
+            <summary>
+            Obtiene los datos desde BD y los mapea a un objeto Entrada con sus respectivas lineas
+            </summary>
+            <param name="empresa"></param>
+            <param name="centro"></param>
+            <param name="partida"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Entradas.GetLineasEntrada(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Obtiene las lineas de la entrada desde BD y los mapea a un objeto Linea Entrada 
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Entradas.CreateEntradaFromDataRow(System.Data.DataRow)">
+            <summary>
+            Crear objeto de Entradas con posibilidad de rellenar las lineas
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Entradas.CrearEntrada(ANTraductor.Entidades.Entrada)">
+            <summary>
+            Crear registro de entrada con la cabecera y lineas en la base de datos
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Entradas.ActualizarEntrada(ANTraductor.Entidades.Entrada)">
+            <summary>
+            Actualizar datos de la entrada en cabecera y lineas de la base de datos
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Entradas.ContadorEntrada(System.String,System.String)">
+            <summary>
+            Obtener el numero de contador de Entrada, sumar uno para el siguiente y actualizar la tabla de contadores
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Clientes.GetClientes(System.String,System.Boolean)">
+            <summary>
+            Lista de clientes con motes personalizados de un vendedor 
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Clientes.GetDatos(System.String,System.String)">
+            <summary>
+            Informacion completa de un cliente
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Clientes.GetCreditoNIF(System.String,System.String)">
+            <summary>
+            Credito de un NIF (Plazo, Importe, Plazo de Bloqueo y Importe de Bloqueo)
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Clientes.GetCostesYDescuentos(System.String,System.String)">
+            <summary>
+            Costes y descuentos de un cliente (Rappel, Financiacion, Transporte y Descuento)
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Clientes.HaCompradoHoy(System.String)">
+            <summary>
+            Indica si un cliente ha comprado el dia de hoy
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Clientes.SetMote(System.String,System.String,System.String)">
+            <summary>
+            Asignar un nombre comercial (mote) a un cliente usado por un usuario
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Clientes.SetBorrarContactos(System.String,System.String)">
+            <summary>
+            Borrar todos los contactos de un cliente
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Clientes.SetContacto(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Añadir nuevos datos de contacto para un cliente
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.GetTicketsHoyYProgramados(System.String,System.String,System.String,System.String)">
+            <summary>
+            Cabeceras de comandas de hoy y programadas para un centro, permite filtrar por el estado
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.GetLineas(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Listado de lineas de un ticket
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.GetHistoricoDeCliente(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Lineas de comandas de un cliente en el periodo indicado
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.GetCliente(System.Int32,System.Boolean)">
+            <summary>
+            Codigo y nombre del cliente que ha realizado el pedido especificado
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.Estado(System.String)">
+            <summary>
+            Estado en el que se encuentra un ticket
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SiguientePosicion(System.String,System.String,System.Int32)">
+            <summary>
+            Numero de la siguiente posicion de linea disponible para un ticket
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.CuentaTickets(System.String,System.String,System.String)">
+            <summary>
+            Numero de tickets del tipo especificado (Nuevos, SinPrecio, Borradores o Todos) para un centro
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.CuentaProgramados(System.String,System.String)">
+            <summary>
+            Numero de tickets programados para un centro
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetCabeceraVacia(System.String,System.String)">
+            <summary>
+            Creacion de una cabecera de comanda "vacia", reserva el numero de ticket retornado
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetLineaVacia(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Crear una linea de comanda
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetCabecera(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Guardar la cabecera de una comanda para hoy
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetCabeceraProgramada(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            Guardar la cabecera de una comanda programada para la fecha indicada
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetLinea(System.String,System.String,System.Int32,System.Int32,System.String,System.Double,System.Double,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Guardar una linea de comanda para hoy 
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetLineaProgramada(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.Double,System.Double,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Guardar una linea de comanda programada para la fecha indicada
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetBorrarCabecera(System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Borrar la cabecera de una comanda
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetBorraLinea(System.String,System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Borrar una linea de comanda
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetNumTicketLinea(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Cambiar el numero de ticket al que pertenece una linea de comanda
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetLimpiarVacios(System.String)">
+            <summary>
+            Borrar tickets vacios de dias anteriores
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetCentroAlmacenLinea(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Modifica el centro y el almacen de una linea de comanda
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Comandas.SetBultosYPrecioLinea(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Guardar cambios en bultos, precio y observacion de una linea
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Empresas.GetEmpresas">
+            <summary>
+            Lista de Empresas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Empresas.GetCentros(System.String,System.Boolean)">
+            <summary>
+            Lista de Centros de una empresa
+            </summary>
+            <param name="empresa"></param>
+            <param name="soloActivos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Empresas.GetAlmacenes(System.String)">
+            <summary>
+            Lista de Almacenes de un centro
+            </summary>
+            <param name="centro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Empresas.GetAlmacenXDefecto(System.String)">
+            <summary>
+            Almacen por defecto de un centro
+            </summary>
+            <param name="centro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Empresas.GetCentroAlmacenesValidos">
+            <summary>
+            Lista de combinaciones Centro-Almacen existentes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Empresas.SetDesactivaCentros">
+            <summary>
+            Poner todos los centros como inactivos
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Empresas.SetCentroAlmacenActivo(System.String,System.String)">
+            <summary>
+            Activar un centro y establecer sus almacenes activos
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Preparadores.GetPreparadores(System.String)">
+            <summary>
+            Lista de Preparadores activos de un centro
+            </summary>
+            <param name="centro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Productos.GetTodos">
+            <summary>
+            Lista de todos los productos existentes en formato "variedad>confeccion" junto con su descripcion completa
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetFavoritosCliente(System.String,System.String,System.DateTime)">
+            <summary>
+            Lista de productos comprados en una empresa por un cliente desde la fecha indicada
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetCompradosHoyCliente(System.String)">
+            <summary>
+            Productos que ya ha comprado un cliente el dia de hoy en formato string: "variedad>confeccion"
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetVariedadesYPosiciones(System.String,System.Int32,System.Int32)">
+            <summary>
+            Lista de variedades y su posicion en una pantalla concreta configurada por un usuario
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetVariedadesConStock(System.String)">
+            <summary>
+            Lista de productos con stock de una empresa
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetTodosStocksDeConfeccion(System.String,System.String,System.String)">
+            <summary>
+            Sumatorio de los stocks de una confeccion para almacen1 y almacen2 de cada centro (inicial + entradas - ventas - facturas)
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetTodosStocksDeVariedad(System.String,System.String)">
+            <summary>
+            Listado completo de los diferentes stocks de una variedad
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetProveedorYPreciosConfeccion(System.String,System.String)">
+            <summary>
+            Nombre del proveedor y precios de referencia y minimos de un producto
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetPreciosReferenciaConfeccion(System.String,System.String)">
+            <summary>
+            Precio de referencia y precio mínimo de una confeccion
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.NombreVariedad(System.String)">
+            <summary>
+            Nombre/Descripcion de una Variedad
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.NombreConfeccion(System.String,System.String)">
+            <summary>
+            Nombre/Descripcion de una Confeccion (precedido por su Variedad)
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.BultosXPalet(System.String,System.String)">
+            <summary>
+            Bultos de una confeccion que caben en un palet entero
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.GetPrecioYTarifa(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Precio y tarifa asignada a una confeccion para un cliente
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.SetActivaConfeccionesNulas">
+            <summary>
+            Marcar como activas las confecciones sin estado
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.SetDesactivaConfeccionesAntiguas">
+            <summary>
+            Marcar como inactivas todas las confecciones que no se han vendido en 2 años 
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.SetBorraPosicionesVariedades(System.String,System.String,System.Int32)">
+            <summary>
+            Borra las posiciones en pantalla de variedades guardadas de un vendedor
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.SetGuardaPosicionVariedad(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Guarda la posicion de una variedad en una pantalla de venta (pantalla, columna y posicion)
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.SetEstadoConfeccion(System.String,System.String,System.String,System.String)">
+            <summary>
+            Cambiar el estado de una confeccion (normal, con precio minimo, prioritaria o en oferta)
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.SetPrecio(System.String,System.String,System.Double,System.String,System.String)">
+            <summary>
+            Guardar un precio Minimo o de Referencia de una confeccion
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Productos.SetBorrarPrecio(System.String,System.String,System.String,System.String)">
+            <summary>
+            Borrar el precio Minimo o de Referencia de una confeccion
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Utils.Grids.SelectedRowsKeyUp(System.Windows.Forms.DataGridView)">
+            <summary>
+            Marcar/Desmarcar las lineas selecionadas cuando presiona el "Espacio" del teclado
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Vendedores.GetPassHash(System.String)">
+            <summary>
+            Hash de la contraseña del usuario
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Vendedores.GetUsuarios(System.Boolean)">
+            <summary>
+            Lista de usuarios
+            </summary>
+            <param name="soloVisibles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Vendedores.GetEmpresaYCentro(System.String)">
+            <summary>
+            Empresa y Centro habituales de un Vendedor
+            </summary>
+            <param name="vendedor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Vendedores.ConvertPassesToHashes">
+            <summary>
+            Rellena la columna de hash de los usuarios con su contraseña en texto plano
+            </summary>
+        </member>
+        <member name="M:ANTraductor.Ventas.GetHistoricoCliente(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Lineas de venta de un cliente entre las fechas indicadas
+            </summary>
+            <param name="cliente"></param>
+            <param name="desdeFecha"></param>
+            <param name="hastaFecha"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Ventas.GetHistoricoArticulos(System.String,System.String)">
+            <summary>
+            Lista de articulos comprados en el periodo indicado
+            </summary>
+            <param name="cliente"></param>
+            <param name="periodo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Ventas.GetUltimasVentasConfeccion(System.String,System.String,System.String,System.DateTime,System.String,System.Int32)">
+            <summary>
+            Lista de ventas de una confeccion a un cliente o a cualquiera desde la fecha indicada
+            </summary>
+            <param name="empresa"></param>
+            <param name="variedad"></param>
+            <param name="confeccion"></param>
+            <param name="desdeFecha"></param>
+            <param name="cliente"></param>
+            <param name="numVentas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Ventas.GetUltimoPrecioProducto(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Precio y Fecha de la ultima vez que se vendio un producto a un cliente
+            </summary>
+            <param name="variedad"></param>
+            <param name="confeccion"></param>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Ventas.FechaUltimaVentaString(System.String)">
+            <summary>
+            Fecha de la ultima venta de un cliente en formato texto
+            </summary>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ANTraductor.Ventas.NumVentasCliente(System.String,System.String,System.DateTime)">
+            <summary>
+            Cuenta de ventas de un cliente desde una fecha
+            </summary>
+            <param name="cliente"></param>
+            <param name="desdeFecha"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
