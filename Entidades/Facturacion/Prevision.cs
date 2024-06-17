@@ -18,10 +18,11 @@ namespace ANTEntidades
         public string Observaciones { get; set; }
         public bool Historico { get; set; }
         public string Usuario { get; set; }
+        public bool Confirmado { get; set; }
         #endregion
 
         #region Constructor
-        public Prevision(string empresa, string centro, string numPrevision, DateTime fecha, Proveedor proveedor, string observaciones, bool historico, string usuario)
+        public Prevision(string empresa, string centro, string numPrevision, DateTime fecha, Proveedor proveedor, string observaciones, bool historico, string usuario, bool confirmado)
         {
             Empresa = empresa;
             Centro = centro;
@@ -32,6 +33,7 @@ namespace ANTEntidades
             Historico = historico;
             Lineas = new List<LineaPrevision>();
             Usuario = usuario;
+            Confirmado = confirmado;
         }
         #endregion
     }
@@ -59,6 +61,7 @@ namespace ANTEntidades
         public int RowId { get; set; }
         public string NumPrevision { get; set; }
         public bool Historico { get; set; }
+        public bool ConfirmadoLin { get; set; }
         #endregion
     }
 }

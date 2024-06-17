@@ -10,6 +10,7 @@ namespace ANTEntidades
 {
     public class Confeccion
     {
+        public int Id;
         public string empresa;
         public Variedad variedad;
         public string IdConf;
@@ -25,12 +26,13 @@ namespace ANTEntidades
         public double PrecioRef { get; set; }
         public double PrecioMin { get; set; }
 
-        public Confeccion(string empresa, Variedad variedad, string id, string descripcion)
+        public Confeccion(string empresa, Variedad variedad, string idconf, string descripcion, int id=0)
         {
             this.empresa = empresa;
             this.variedad = variedad;
-            this.IdConf = id;
+            this.IdConf = idconf;
             this.descripcion = descripcion;
+            this.Id = id;
         }
 
         public Confeccion(string empresa, Variedad variedad, string id, string descripcion, bool peso_fijo, double peso, double precio_ref, double precio_min, string pais, string vendedor, double bultosxpalet, double tara)

@@ -62,6 +62,7 @@
     <Compile Include="Entidades\Auxiliares\Pais.cs" />
     <Compile Include="Entidades\Auxiliares\PlantillaLinea.cs" />
     <Compile Include="Entidades\Facturacion\Prevision.cs" />
+    <Compile Include="Entidades\Maestros\MaestroBase.cs" />
     <Compile Include="Entidades\Maestros\Producto.cs" />
     <Compile Include="Entidades\Maestros\Proveedor.cs" />
     <Compile Include="Entidades\Auxiliares\TipoDocumento.cs" />

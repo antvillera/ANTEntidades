@@ -1,17 +1,22 @@
-﻿using ANTEntidades;
+﻿using ANTCommon.Conversions;
+using ANTEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ANTEntidades
 {
+
     public class Entrada
     {
         #region Propiedades
+        public string IdEntrada { get; set; }
+        public string Serie { get; set; }
         public string Empresa { get; set; }
         public string Centro { get; set; }
 
@@ -33,8 +38,9 @@ namespace ANTEntidades
         #endregion
 
         #region Constructor
-        public Entrada(string empresa, string centro, string numEntrada, DateTime fecha, DateTime fechaDoc, Proveedor proveedor, string numDocumento, string numOriginal, string numAlbaran, string observaciones, string estado, bool historico, string usuario, Comprador comprador, string idtipoliquidacion)
+        public Entrada(string idEntrada, string empresa, string centro, string numEntrada, DateTime fecha, DateTime fechaDoc, Proveedor proveedor, string numDocumento, string numOriginal, string numAlbaran, string observaciones, string estado, bool historico, string usuario, Comprador comprador, string idtipoliquidacion)
         {
+            IdEntrada = idEntrada;
             Empresa = empresa;
             Centro = centro;
             NumEntrada = numEntrada;
@@ -52,6 +58,8 @@ namespace ANTEntidades
             IdTipoLiquidacion = idtipoliquidacion;
             Lineas = new List<LineaEntrada>();
         }
+
+      
 
         public Entrada()
         {
@@ -98,6 +106,41 @@ namespace ANTEntidades
             VariedadLin = variedad;
             ConfeccionLin = confeccion;
             Precio = precio;
+        }
+
+        public LineaEntrada(DataRow rowLin)
+        {
+            Variedad variedad = new Variedad(rowLin["variedad"].ToString().Trim(), rowLin["descripcion_var"].ToString().Trim(), "");
+            Confeccion confeccion = new Confeccion("",
+                                                   variedad,
+                                                   rowLin["confeccion"].ToString().Trim(),
+                                                   rowLin["descripcion_conf"].ToString().Trim(),
+                                                   rowLin["peso_fijo"].ToString().Trim() == "S",
+                                                   Conversions.ToDouble(rowLin["peso"].ToString()),
+                                                   Conversions.ToDouble(rowLin["precio_ref"]),
+                                                   Conversions.ToDouble(rowLin["precio_min"]),
+                                                   rowLin["pais"].ToString().Trim(),
+                                                   rowLin["vendedor"].ToString().Trim(),
+                                                   Conversions.ToDouble(rowLin["bultosxpalet"]),
+                                                   Conversions.ToDouble(rowLin["tara"]));
+
+
+            Posicion = Conversions.ToInt(rowLin["posicion"].ToString());
+            VariedadLin = variedad;
+            ConfeccionLin = confeccion;
+            Bultos = Conversions.ToInt(rowLin["bultos"]);
+            Tara = Conversions.ToDouble(rowLin["tara"]);
+            PesoFijo = rowLin["peso_fijo"].ToString().Trim() == "S";
+            Peso = rowLin["peso"].ToString();
+            Bruto = Conversions.ToDouble(rowLin["bruto"]);
+            Neto = Conversions.ToDouble(rowLin["neto"]);
+            Precio = Conversions.ToDouble(rowLin["precio"]);
+            Almacen = rowLin["almacen"].ToString();
+            Importe = Conversions.ToDouble(rowLin["importe"]);
+            Medida = rowLin["unidad"].ToString();
+            Pais = rowLin["pais"].ToString().Trim();
+            Palet = Conversions.ToDouble(rowLin["palet"]);
+            BultosxPalet = Conversions.ToDouble(rowLin["bultosxpalet"]);
         }
         #endregion
     }
