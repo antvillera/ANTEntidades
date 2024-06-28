@@ -4,7 +4,6 @@ C:\DESARROLLO\ANTEntidades\bin\Release\ANTCommon.dll
 C:\DESARROLLO\ANTEntidades\bin\Release\CircularProgressBar.dll
 C:\DESARROLLO\ANTEntidades\bin\Release\IBM.Data.Informix.dll
 C:\DESARROLLO\ANTEntidades\bin\Release\WinFormAnimation.dll
-C:\DESARROLLO\ANTEntidades\bin\Release\ANTraductor_A3.dll
 C:\DESARROLLO\ANTEntidades\bin\Release\ANTraductor.dll
 C:\DESARROLLO\ANTEntidades\bin\Release\ActiproSoftware.Wizard.dll
 C:\DESARROLLO\ANTEntidades\bin\Release\ANTraductor.xml
