@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Auxiliares\RangoFecha.cs" />
     <Compile Include="Entidades\Maestros\Acreedor.cs" />
     <Compile Include="Entidades\Facturacion\Averia.cs" />
     <Compile Include="Entidades\BD\Campo.cs" />

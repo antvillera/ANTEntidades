@@ -47,8 +47,8 @@ namespace ANTEntidades
             Fecha = fecha;
             FechaDoc = fechaDoc;
             Proveedor = proveedor;
-            NumOriginal = numOriginal.Replace("'", "");
-            NumDocumento = numDocumento.Replace("'", "");
+            NumOriginal = numOriginal?.Replace("'", "") ?? "";
+            NumDocumento = numDocumento?.Replace("'", "") ??"";
             NumAlbaran = numAlbaran.Replace("'", "");
             Observaciones = observaciones.Replace("'", "");
             Estado = estado;
@@ -80,6 +80,7 @@ namespace ANTEntidades
         public int Bultos { get; set; }
         public double BultosxPalet { get; set; }
         public double Tara { get; set; }
+        public double TaraCompra { get; set; }
         public double Bruto { get; set; }
         public double Neto { get; set; }
         public double Precio { get; set; }
@@ -90,6 +91,8 @@ namespace ANTEntidades
         public bool PesoFijo { get; set; }
         public string Medida { get; set; }
         public int RowIdPrevision { get; set; }
+
+       
         #endregion
 
         #region Constructor
@@ -122,7 +125,8 @@ namespace ANTEntidades
                                                    rowLin["pais"].ToString().Trim(),
                                                    rowLin["vendedor"].ToString().Trim(),
                                                    Conversions.ToDouble(rowLin["bultosxpalet"]),
-                                                   Conversions.ToDouble(rowLin["tara"]));
+                                                   Conversions.ToDouble(rowLin["tara"]),
+                                                   Conversions.ToDouble(rowLin["tara_compra"]));
 
 
             Posicion = Conversions.ToInt(rowLin["posicion"].ToString());

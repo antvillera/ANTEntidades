@@ -53,6 +53,7 @@ namespace ANTEntidades
         public double BultosxPalet { get; set; }
         public double Bruto { get; set; }
         public double Tara { get; set; }
+        public double TaraCompra { get; set; }
         public double Neto { get; set; }
         public double Precio { get; set; }
         public double Importe { get; set; }

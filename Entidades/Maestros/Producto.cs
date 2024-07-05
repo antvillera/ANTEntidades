@@ -32,6 +32,9 @@ namespace ANTEntidades
         public string Remitente { get; set; }
         public string Busqueda { get; set; }
         public string Vendedor { get; set; }
+        public string Envase { get; set; }
+        public string Calibre { get; set; }
+        public string Categoria { get; set; }
         #endregion
 
         #region Constructor
@@ -42,7 +45,7 @@ namespace ANTEntidades
             NombreVariedad = row["variedad"].ToString().Trim();
             Confeccion = row["codconf"].ToString().Trim();
             NombreConfeccion = row["confeccion"].ToString().Trim();
-            Codigo = $"{row["codvar"].ToString().Trim()}-{row["codconf"].ToString().Trim()}";
+            Codigo = $"{row["codigo"].ToString().Trim()}";
             Descripcion = $"{row["variedad"].ToString().Trim()} {row["confeccion"].ToString().Trim()}";
             Tara = row["tara"].ToString().Trim();
             Pais = row["pais"].ToString().Trim();
@@ -56,6 +59,9 @@ namespace ANTEntidades
             Remitente = row["ult_remitente"].ToString().Trim();
             Busqueda = row["busqueda"].ToString().Trim();
             Vendedor = row["vendedor"].ToString().Trim();
+            Envase = row["envase"].ToString().Trim();
+            Calibre = row["calibre"].ToString().Trim();
+            Categoria = row["categoria"].ToString().Trim();
         }
         #endregion
 

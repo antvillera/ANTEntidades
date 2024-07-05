@@ -22,6 +22,7 @@ namespace ANTEntidades
         public object panel;
         public double BultosxPalet { get; set; }
         public double Tara { get; set; }
+        public double TaraCompra { get; set; }
 
         public double PrecioRef { get; set; }
         public double PrecioMin { get; set; }
@@ -35,7 +36,7 @@ namespace ANTEntidades
             this.Id = id;
         }
 
-        public Confeccion(string empresa, Variedad variedad, string id, string descripcion, bool peso_fijo, double peso, double precio_ref, double precio_min, string pais, string vendedor, double bultosxpalet, double tara)
+        public Confeccion(string empresa, Variedad variedad, string id, string descripcion, bool peso_fijo, double peso, double precio_ref, double precio_min, string pais, string vendedor, double bultosxpalet, double tara, double tara_compra)
         {
             this.empresa = empresa;
             this.variedad = variedad;
@@ -47,6 +48,7 @@ namespace ANTEntidades
             this.PrecioRef = precio_ref;
             this.PrecioMin = precio_min;
             Tara = tara;
+            TaraCompra = tara_compra;
             BultosxPalet = bultosxpalet;
             Vendedor = vendedor;
         }
