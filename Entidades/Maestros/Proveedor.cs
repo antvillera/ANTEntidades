@@ -29,6 +29,10 @@ namespace ANTEntidades
         public DateTime fechaAlta;
         public string email;
         public string web;
+        public string IdComprador;
+        private Comprador comprador = null;
+        public string IdCorredor;
+        private Corredor corredor = null;
         #endregion
 
         #region Constructor

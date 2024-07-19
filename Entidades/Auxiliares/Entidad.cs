@@ -17,7 +17,8 @@ namespace ANTEntidades
         public enum EntidadFacturacion
         {
             Prevision,
-            Entrada
+            Entrada,
+            Traspaso
         }
         #endregion
 
