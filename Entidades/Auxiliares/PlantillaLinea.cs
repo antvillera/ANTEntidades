@@ -1,4 +1,5 @@
 ﻿using ANTCommon.Conversions;
+using ANTEntidades.Maestros;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -42,8 +43,9 @@ namespace ANTEntidades
                 Conversions.ToDouble(row["precio_min"]),
                 row["pais"].ToString().Trim(),
                 row["vendedor"].ToString().Trim(),
-                 Conversions.ToDouble(row["bultosxpalet"]),
-                 Conversions.ToDouble(row["tara"]), Conversions.ToDouble(row["tara_compra"]));
+                Conversions.ToDouble(row["bultosxpalet"]),
+                Conversions.ToDouble(row["tara"]), 
+                Conversions.ToDouble(row["tara_compra"]));
 
             Posicion = Conversions.ToInt(row["posicion"].ToString());
             Precio = Conversions.ToDouble(row["precio"].ToString());

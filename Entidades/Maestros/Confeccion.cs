@@ -5,8 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace ANTEntidades
+namespace ANTEntidades.Maestros
 {
     public class Confeccion
     {
@@ -27,7 +26,7 @@ namespace ANTEntidades
         public double PrecioRef { get; set; }
         public double PrecioMin { get; set; }
 
-        public Confeccion(string empresa, Variedad variedad, string idconf, string descripcion, int id=0)
+        public Confeccion(string empresa, Variedad variedad, string idconf, string descripcion, int id)
         {
             this.empresa = empresa;
             this.variedad = variedad;
@@ -36,7 +35,15 @@ namespace ANTEntidades
             this.Id = id;
         }
 
-        public Confeccion(string empresa, Variedad variedad, string id, string descripcion, bool peso_fijo, double peso, double precio_ref, double precio_min, string pais, string vendedor, double bultosxpalet, double tara, double tara_compra)
+        public Confeccion(string empresa, Variedad variedad, string idconf, string descripcion)
+        {
+            this.empresa = empresa;
+            this.variedad = variedad;
+            this.IdConf = idconf;
+            this.descripcion = descripcion;
+        }
+
+        public Confeccion(string empresa, Variedad variedad, string id, string descripcion, bool peso_fijo, double peso, double precio_ref, double precio_min, string pais, string vendedor, double bultosxpalet, double tara, double taracompra)
         {
             this.empresa = empresa;
             this.variedad = variedad;
@@ -48,10 +55,11 @@ namespace ANTEntidades
             this.PrecioRef = precio_ref;
             this.PrecioMin = precio_min;
             Tara = tara;
-            TaraCompra = tara_compra;
             BultosxPalet = bultosxpalet;
             Vendedor = vendedor;
+            TaraCompra = taracompra;
         }
+
 
         public Confeccion(Variedad variedad, DataRow row)
         {

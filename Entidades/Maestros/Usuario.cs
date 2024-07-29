@@ -11,7 +11,10 @@ namespace ANTEntidades
     {
         #region Propiedades
         public string IdUsuario { get; set; }
+        public string IdEmpresa { get; set; }
         public string Nombre { get; set; }
+        public string Password { get; set; }
+        public bool Activo { get; set; }
         #endregion
 
         #region Constructor

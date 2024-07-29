@@ -1,4 +1,5 @@
 ﻿using ANTCommon.Conversions;
+using ANTEntidades.Maestros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

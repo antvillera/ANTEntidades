@@ -1,5 +1,6 @@
 ﻿using ANTCommon.Conversions;
 using ANTEntidades;
+using ANTEntidades.Maestros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,7 +91,7 @@ namespace ANTEntidades
         public string Peso { get; set; }
         public bool PesoFijo { get; set; }
         public string Medida { get; set; }
-        public int RowIdPrevision { get; set; }
+        public string RowIdPrevision { get; set; }
 
        
         #endregion
@@ -98,7 +99,7 @@ namespace ANTEntidades
         #region Constructor
         public LineaEntrada()
         {
-            RowIdPrevision = 0;
+            RowIdPrevision = "";
         }
 
         public LineaEntrada(string empresa, string centro, string numEntrada, Variedad variedad, Confeccion confeccion, double precio)

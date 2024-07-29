@@ -1,14 +1,12 @@
-C:\DESARROLLO\ANTEntidades\obj\Debug\ANTEntidades.csproj.AssemblyReference.cache
-C:\DESARROLLO\ANTEntidades\obj\Debug\ANTEntidades.csproj.CoreCompileInputs.cache
 C:\DESARROLLO\ANTEntidades\bin\Debug\ANTEntidades.dll
 C:\DESARROLLO\ANTEntidades\bin\Debug\ANTEntidades.pdb
 C:\DESARROLLO\ANTEntidades\bin\Debug\ANTCommon.dll
 C:\DESARROLLO\ANTEntidades\bin\Debug\CircularProgressBar.dll
 C:\DESARROLLO\ANTEntidades\bin\Debug\IBM.Data.Informix.dll
 C:\DESARROLLO\ANTEntidades\bin\Debug\WinFormAnimation.dll
-C:\DESARROLLO\ANTEntidades\bin\Debug\ANTraductor.dll
 C:\DESARROLLO\ANTEntidades\bin\Debug\ActiproSoftware.Wizard.dll
-C:\DESARROLLO\ANTEntidades\bin\Debug\ANTraductor.xml
+C:\DESARROLLO\ANTEntidades\obj\Debug\ANTEntidades.csproj.AssemblyReference.cache
+C:\DESARROLLO\ANTEntidades\obj\Debug\ANTEntidades.csproj.CoreCompileInputs.cache
 C:\DESARROLLO\ANTEntidades\obj\Debug\ANTEntidades.csproj.CopyComplete
 C:\DESARROLLO\ANTEntidades\obj\Debug\ANTEntidades.dll
 C:\DESARROLLO\ANTEntidades\obj\Debug\ANTEntidades.pdb
