@@ -53,6 +53,7 @@
     <Compile Include="Entidades\AICA\Contrato.cs" />
     <Compile Include="Entidades\AICA\Motivo.cs" />
     <Compile Include="Entidades\Auxiliares\Contacto.cs" />
+    <Compile Include="Entidades\Auxiliares\Direccion.cs" />
     <Compile Include="Entidades\Auxiliares\LineaDetalleParametros.cs" />
     <Compile Include="Entidades\Auxiliares\LineaFactura.cs" />
     <Compile Include="Entidades\Auxiliares\Oferta.cs" />
