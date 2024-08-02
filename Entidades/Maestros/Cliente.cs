@@ -15,39 +15,64 @@ namespace ANTEntidades.Maestros
         //          GENERAL
         //****************************
         // Cabecera
-        public string IdCliente { get; set; }
-        public string Nombre { get; set; }
-        public string RazonSocial { get; set; }
-        public string Mote { get; set; }
-        public string NIF { get; set; }
-        public DateTime FechaAlta { get; set; }
-        public bool Activo { get; set; }
+        public string idCliente { get; set; }
+        public string nombre { get; set; }
+        public string razonSocial { get; set; }
+        public string mote { get; set; }
+        public string nif { get; set; }
+        public DateTime fechaAlta { get; set; }
+        public bool obsoleto { get; set; }
+        public bool bloqueado { get; set; }
 
         // Direcciones
-        public Direccion DireccionFiscal { get; set; }
-        public Direccion DireccionComercial { get; set; }
-        public Direccion DireccionEnvio { get; set; }
+        public Direccion direccionFiscal { get; set; }
+        public Direccion direccionComercial { get; set; }
+        public Direccion direccionEnvio { get; set; }
 
         //****************************
         //          FACTURACION
         //****************************
-        public string FormaPago { get; set; }
-        public string DocPago { get; set; }
-        public string Moneda { get; set; }
-        public string Iban { get; set; }
-        public int PlazoMaxPago { get; set; } // Dias que puede estar una factura sin pagar
-        public string FormaFacturacion { get; set; } // Si se le pueden hacer (F) Facturas, (A) Albaranes o (T) ambos a documentos nuevos
+        public string formaPago { get; set; }
+        public string docPago { get; set; }
+        public string moneda { get; set; }
+        public string iban { get; set; }
+        public string formaFacturacion { get; set; } // Si se le pueden hacer (F) Facturas, (A) Albaranes o (T) ambos a documentos nuevos
+        public string tipoCliente { get; set; }     // Tipo de cliente: Mayorista o Detallista 
 
-        // Descuentos y Pagos
-        public string RegimenIva { get; set; }
-        public double Iva { get; set; }
-        public string TipoIva { get; set; }
+        public double rappel { get; set; }
+        public double financiacion { get; set; }
+        public bool tieneBloqueo { get; set; }
+        public int plazoMaxPago { get; set; } // Dias que puede estar una factura sin pagar
+        public int importeMaxPago { get; set; }
+        ///-------------------------------------------
+        public string regimenIva { get; set; } 
+        public double iva { get; set; }             ///--- OCULTOS ---
+        public string tipoIva { get; set; }
 
-        // Contactos
-        public List<Contacto> Contactos { get; set; }
+        //****************************
+        //          CONTABILIDAD
+        //****************************
+        public string[] cuentas { get; set; }
 
-        // Otros
-        public string precarga { get; set; }
+        //****************************
+        //          COMERCIAL
+        //****************************
+        public bool precargaVenta { get; set; }
+        public bool paletizar { get; set; }
+        public bool sinPagar { get; set; }
+
+        //****************************
+        //          CONTACTOS
+        //****************************
+        public List<Contacto> contactos { get; set; }
+
+        //****************************
+        //          AVISOS
+        //****************************
+        public bool avisoVenta { get; set; }
+        public bool avisoFacturacion { get; set; }
+        public string msgVenta { get; set; }
+        public string msgFacturacion { get; set; }
 
 
         public Cliente()

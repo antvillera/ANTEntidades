@@ -15,5 +15,10 @@ namespace ANTEntidades.Entidades.Auxiliares
         public string Poblacion { get; set; }
         public string Provincia { get; set; }
         public string Pais { get; set; }
+
+        public Direccion() 
+        {
+            
+        }
     }
 }
