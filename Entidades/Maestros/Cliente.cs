@@ -75,8 +75,20 @@ namespace ANTEntidades.Maestros
         public string msgFacturacion { get; set; }
 
 
-        public Cliente()
+        public Cliente(string idCliente)
         {
+            this.idCliente = idCliente;
+            this.direccionFiscal = new Direccion();
+            this.direccionComercial = new Direccion();
+            this.direccionEnvio = new Direccion();
+            this.cuentas = new string[12];
+
+            string[] prefijosCuentas = new string[12] { "4300", "4310", "4311", "4380", "4380", "4380", "4360", "4315", "7000", "7080", "4730", "4730" };
+            for (int i = 0; i < 12; i++)
+            {
+                this.cuentas[i] = prefijosCuentas[i];
+                this.cuentas[i] += i < 8 ? idCliente.PadLeft(8, '0') : "0".PadLeft(8, '0');   // Las 8 primeras son especificas de cliente y las 4 ultimas son genericas
+            }
         }
         #endregion
     }
