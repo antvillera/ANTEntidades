@@ -6,25 +6,19 @@ using System.Threading.Tasks;
 
 namespace ANTEntidades.Entidades.Auxiliares
 {
-    internal class Oferta
+    public class Oferta
     {
         #region Propiedades
         public int IdOferta { get; set; }
         public string IdProveedor { get; set; }
         public string IdVariedad { get; set; }
-        public string IdConf { get; set; }
-        public string Precio { get; set; }
+        public string IdConfeccion { get; set; }
+        public string Descripcion { get; set; }
         public DateTime FechaDesde { get; set; }
         public DateTime FechaHasta { get; set; }
-        #endregion
+        public string Precio { get; set; }
+        public bool Oculto { get; set; }
 
-
-        #region Constructor
-        public Oferta()
-        {
-            FechaDesde = DateTime.Now;
-            FechaHasta = DateTime.Now;
-        }
         #endregion
     }
 }
