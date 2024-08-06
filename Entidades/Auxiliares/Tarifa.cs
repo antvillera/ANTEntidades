@@ -36,13 +36,22 @@ namespace ANTEntidades
         #region Propiedades
         public int IdDetalle { get; set; }
         public int IdTarifa { get; set; }
+        public int IdReferencia { get; set; }
+        public string Original { get; set; }
         public string IdVariedad { get; set; }
         public string IdConf { get; set; }
         public string Descripcion { get; set; }
         public string Precio { get; set; }
         public bool Oculto { get; set; }
+        public string Codigo => $"{IdVariedad}-{IdConf}";
         #endregion
     }
 
-
+    public class Referencia 
+    {
+        public string IdProveedor { get; set; }
+        public int IdReferencia { get; set; }
+        public string Codigo { get; set; }
+        public string Original { get; set; }
+    }
 }
