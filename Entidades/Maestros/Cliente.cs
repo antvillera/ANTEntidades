@@ -35,7 +35,7 @@ namespace ANTEntidades.Maestros
         public string formaPago { get; set; }
         public string docPago { get; set; }
         public string moneda { get; set; }
-        public string iban { get; set; }
+        public CuentaBancaria cuentaBancaria { get; set; }
         public string formaFacturacion { get; set; } // Si se le pueden hacer (F) Facturas, (A) Albaranes o (T) ambos a documentos nuevos
         public string tipoCliente { get; set; }     // Tipo de cliente: Mayorista o Detallista 
 
