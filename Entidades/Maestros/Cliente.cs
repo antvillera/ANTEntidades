@@ -41,6 +41,7 @@ namespace ANTEntidades.Maestros
 
         public double rappel { get; set; }
         public double financiacion { get; set; }
+        public double precioPalet { get; set; }
         public bool tieneBloqueo { get; set; }
         public int plazoMaxPago { get; set; } // Dias que puede estar una factura sin pagar
         public int importeMaxPago { get; set; }
@@ -60,6 +61,7 @@ namespace ANTEntidades.Maestros
         public bool precargaVenta { get; set; }
         public bool paletizar { get; set; }
         public bool sinPagar { get; set; }
+        public bool debeFirmar { get; set; }
 
         //****************************
         //          CONTACTOS
@@ -81,6 +83,7 @@ namespace ANTEntidades.Maestros
             this.direccionFiscal = new Direccion();
             this.direccionComercial = new Direccion();
             this.direccionEnvio = new Direccion();
+            this.cuentaBancaria = new CuentaBancaria("");
             this.cuentas = new string[12];
 
             string[] prefijosCuentas = new string[12] { "4300", "4310", "4311", "4380", "4380", "4380", "4360", "4315", "7000", "7080", "4730", "4730" };
