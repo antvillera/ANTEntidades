@@ -117,5 +117,16 @@ namespace ANTEntidades
         {
             IdEmpresa = "1";
         }
+
+        public Producto(string idvariedad, string idconfeccion, string proveedor, string descripcion)
+        {
+            IdProducto = $"{idvariedad.Trim()}-{idconfeccion.Trim()}";
+            IdVariedad = idvariedad;
+            IdConfeccion = idconfeccion;
+            IdProveedor = proveedor;
+            Descripcion = descripcion.Trim().TrimEnd('-');
+        }
+
+        public override string ToString() => $"{IdProducto} - {Descripcion}";
     }
 }
