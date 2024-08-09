@@ -44,6 +44,7 @@ namespace ANTEntidades
         public string Precio { get; set; }
         public bool Oculto { get; set; }
         public string Codigo => $"{IdVariedad}-{IdConf}";
+        public string OriginalMayuscula => Original.ToUpper();
         #endregion
     }
 

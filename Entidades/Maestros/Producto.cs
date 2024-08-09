@@ -1,5 +1,6 @@
 ﻿using ANTCommon.Conversions;
 using ANTCommon.Messages;
+using ANTEntidades.Maestros;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -64,7 +65,6 @@ namespace ANTEntidades
             Categoria = row["categoria"].ToString().Trim();
         }
         #endregion
-
     }
 
     public class Producto 
@@ -111,6 +111,8 @@ namespace ANTEntidades
         public string NombreConfeccion { get; set; }
         public string Pais { get; set; }
         public string Vendedor { get; set; }
+
+        public string Codigo => $"{IdVariedad.Trim()}-{IdConfeccion.Trim()}";
         #endregion
 
         public Producto()
