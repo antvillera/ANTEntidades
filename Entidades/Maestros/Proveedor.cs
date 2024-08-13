@@ -32,6 +32,7 @@ namespace ANTEntidades
         public string IdComprador;
         private Comprador comprador = null;
         public string IdCorredor;
+        public string RemitenteStock;
         private Corredor corredor = null;
         #endregion
 
@@ -61,6 +62,7 @@ namespace ANTEntidades
             this.pais = row["pais"].ToString().Trim();
             this.telefono = row["telefono"].ToString().Trim();
             this.email = row["email"].ToString().Trim();
+            this.RemitenteStock = row["remitente_stock"].ToString().Trim();
         }
         #endregion
 
