@@ -92,6 +92,7 @@ namespace ANTEntidades
         public bool PesoFijo { get; set; }
         public string Medida { get; set; }
         public string RowIdPrevision { get; set; }
+        public string Envase { get; set; }
 
        
         #endregion
@@ -102,7 +103,7 @@ namespace ANTEntidades
             RowIdPrevision = "";
         }
 
-        public LineaEntrada(string empresa, string centro, string numEntrada, Variedad variedad, Confeccion confeccion, double precio)
+        public LineaEntrada(string empresa, string centro, string numEntrada, Variedad variedad, Confeccion confeccion, double precio, string envase = null)
         {
             Empresa = empresa;
             Centro = centro;
@@ -110,6 +111,7 @@ namespace ANTEntidades
             VariedadLin = variedad;
             ConfeccionLin = confeccion;
             Precio = precio;
+            Envase = envase;
         }
 
         public LineaEntrada(DataRow rowLin)
@@ -146,6 +148,7 @@ namespace ANTEntidades
             Pais = rowLin["pais"].ToString().Trim();
             Palet = Conversions.ToDouble(rowLin["palet"]);
             BultosxPalet = Conversions.ToDouble(rowLin["bultosxpalet"]);
+            
         }
         #endregion
     }
