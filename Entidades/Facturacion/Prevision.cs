@@ -66,6 +66,8 @@ namespace ANTEntidades
         public string NumPrevision { get; set; }
         public bool Historico { get; set; }
         public bool ConfirmadoLin { get; set; }
+        public string Medida { get; set; }
+
         #endregion
     }
 }
