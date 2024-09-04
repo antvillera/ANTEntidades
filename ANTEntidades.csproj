@@ -36,10 +36,6 @@
       <HintPath>\\server\DESARROLLO\SHARED\a3ERPActiveX.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="ANTCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>\\server\DESARROLLO\SHARED\Common TEST\ANTCommon.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -88,6 +84,12 @@
     <Compile Include="Entidades\Maestros\Usuario.cs" />
     <Compile Include="Entidades\Maestros\Variedad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ANTCommon\ANTCommon.csproj">
+      <Project>{fa360964-bef6-451c-8347-e64cd22e2ce8}</Project>
+      <Name>ANTCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
