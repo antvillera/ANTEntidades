@@ -37,7 +37,8 @@
       <HintPath>\\server\DESARROLLO\SHARED\a3ERPActiveX.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="ANTCommon">
+    <Reference Include="ANTCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SHARED\ANTCommon.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -90,4 +91,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)" "C:\SHARED\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
