@@ -6,24 +6,20 @@ using System.Threading.Tasks;
 
 namespace ANTEntidades
 {
-    public class Pais
+    public class Almacen
     {
         #region Propiedades
         public string Codigo { get; set; }
         public string Nombre { get; set; }
-        public bool Comunitario { get; set; }
+        public string Display => $"{Codigo}-{Nombre}";
         #endregion
 
         #region Constructor
-        public Pais(string codigo, string nombre)
+        public Almacen(string codigo, string nombre)
         {
             Codigo = codigo;
             Nombre = nombre;
         }
-        #endregion
-
-        #region Funciones
-        public override string ToString() => $"{Codigo} - {Nombre}";
         #endregion
     }
 }

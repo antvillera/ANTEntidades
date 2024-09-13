@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Entidades\AICA\Contrato.cs" />
     <Compile Include="Entidades\AICA\Motivo.cs" />
+    <Compile Include="Entidades\Auxiliares\Almacen.cs" />
     <Compile Include="Entidades\Auxiliares\Contacto.cs" />
     <Compile Include="Entidades\Auxiliares\CuentaBancaria.cs" />
     <Compile Include="Entidades\Auxiliares\Direccion.cs" />

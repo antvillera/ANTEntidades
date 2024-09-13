@@ -17,11 +17,13 @@ namespace ANTEntidades
         public bool Visible { get; set; }
         public bool Activo { get; set; }
         public bool Modificable { get; set; }
+        public bool Sistema { get; set; }
+        public int Orden { get; set; }
         #endregion
 
         #region Constructores
         public ConfigLineasDoc() { }
-        public ConfigLineasDoc(int idConfig, string idUsuario, string formulario, string campo, string descripcion, bool visible, bool activo, bool modificable = true)
+        public ConfigLineasDoc(int idConfig, string idUsuario, string formulario, string campo, string descripcion, bool visible, bool activo, bool modificable = true, bool sistema = false, int orden=0)
         {
             IdConfig = idConfig;
             IdUsuario = idUsuario;
@@ -31,6 +33,8 @@ namespace ANTEntidades
             Visible = visible;
             Activo = activo;
             Modificable = modificable;
+            Sistema = sistema;
+            Orden = orden;
         }
         #endregion
     }
