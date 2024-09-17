@@ -52,7 +52,7 @@ namespace ANTEntidades
             Pais = row["pais"].ToString().Trim();
             PesoFijo = row["peso_fijo"].ToString().Trim() == "S";
             Peso = string.IsNullOrEmpty(row["peso"].ToString().Trim()) ? "0" : row["peso"].ToString().Trim();
-            PrecioFijo = Conversions.ToDouble(row["precio_fijo"].ToString().Trim());
+            PrecioFijo = Conversions.ToDouble(row["precio_fijo"]?.ToString().Trim());
             PrecioRef = Conversions.ToDouble(row["precio_ref"].ToString().Trim());
             PrecioMin = Conversions.ToDouble(row["precio_min"].ToString().Trim());
             Stock = Conversions.ToDouble(row["stock"].ToString().Trim());
