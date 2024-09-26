@@ -142,7 +142,7 @@ namespace ANTEntidades
             Bruto = Conversions.ToDouble(rowLin["bruto"]);
             Neto = Conversions.ToDouble(rowLin["neto"]);
             Precio = Conversions.ToDouble(rowLin["precio"]);
-            Almacen = rowLin["almacen"].ToString();
+            Almacen = rowLin["almacen"].ToString().Trim();
             Importe = Conversions.ToDouble(rowLin["importe"]);
             Medida = rowLin["unidad"].ToString();
             Pais = rowLin["pais"].ToString().Trim();
