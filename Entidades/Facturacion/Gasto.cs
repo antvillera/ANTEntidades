@@ -64,6 +64,7 @@ namespace ANTEntidades
         public Acreedor acreedor { get; set; }
         public Proveedor proveedor { get; set; }
         public string Documento { get; set; }
+        public DateTime FechaGasto { get; set; }
         public List<Fichero> FicherosGastos { get; set; }
         #endregion
 

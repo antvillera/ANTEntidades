@@ -36,10 +36,11 @@ namespace ANTEntidades
         public string Usuario { get; set; }
         public string IdTipoLiquidacion { get; set; }
         public Comprador Comprador { get; set; }
+        public bool Recibido { get; set; }
         #endregion
 
         #region Constructor
-        public Entrada(string idEntrada, string empresa, string centro, string numEntrada, DateTime fecha, DateTime fechaDoc, Proveedor proveedor, string numDocumento, string numOriginal, string numAlbaran, string observaciones, string estado, bool historico, string usuario, Comprador comprador, string idtipoliquidacion)
+        public Entrada(string idEntrada, string empresa, string centro, string numEntrada, DateTime fecha, DateTime fechaDoc, Proveedor proveedor, string numDocumento, string numOriginal, string numAlbaran, string observaciones, string estado, bool historico, string usuario, Comprador comprador, string idtipoliquidacion, bool recibido)
         {
             IdEntrada = idEntrada;
             Empresa = empresa;
@@ -57,6 +58,7 @@ namespace ANTEntidades
             Comprador = comprador;
             Usuario = usuario;
             IdTipoLiquidacion = idtipoliquidacion;
+            Recibido = recibido;
             Lineas = new List<LineaEntrada>();
         }
 

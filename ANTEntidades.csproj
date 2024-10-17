@@ -62,6 +62,7 @@
     <Compile Include="Entidades\Auxiliares\Oferta.cs" />
     <Compile Include="Entidades\Auxiliares\RangoFecha.cs" />
     <Compile Include="Entidades\Auxiliares\Tarifa.cs" />
+    <Compile Include="Entidades\DTO\DTO_Prevision.cs" />
     <Compile Include="Entidades\Facturacion\Traspaso.cs" />
     <Compile Include="Entidades\Maestros\Acreedor.cs" />
     <Compile Include="Entidades\Facturacion\Averia.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Entidades\Maestros\Variedad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy  "$(TargetDir)" "C:\SHARED\"</PostBuildEvent>
